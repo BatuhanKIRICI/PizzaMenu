@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -10,18 +10,24 @@ function App() {
   );
 }
 function Header() {
-  return <h1>Fast React Pizza Delivery Co.</h1>;
+  const style = {};
+
+  return (
+    <header className="header">
+      <h1 style={style}>Fast React Pizza Delivery Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -35,7 +41,9 @@ function Footer() {
   else alert("We're currently closed.");
 
   return (
-    <footer>{new Date().toLocaleTimeString()}. We're currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}. We're currently open!
+    </footer>
   );
 }
 
@@ -43,7 +51,7 @@ function Pizza() {
   return (
     <div>
       <img src="./pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
+      <h3>Pizza Spinaci</h3>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
